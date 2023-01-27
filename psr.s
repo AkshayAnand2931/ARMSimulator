@@ -1,0 +1,7 @@
+;Using PSR instructions
+
+MOVS R1,#-10
+MRS R0,CPSR
+AND R0,R0,#0000
+MSR CPSR_F,R0
+SWI 0X11
