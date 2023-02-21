@@ -40,6 +40,7 @@ C: .ASCIZ "Unsuccessful Search"
 
 LDR R1,=A
 LDR R2,=B
+MOV R5,R2
 
 LOOP:
     LDRB R3,[R1]
@@ -50,6 +51,7 @@ LOOP:
     BEQ L2
     CMP R3,R4
     ADDEQ R2,R2,#1
+    MOVNE R2,R5
     ADD R1,R1,#1
     B LOOP
 
@@ -63,7 +65,7 @@ L2:
     SWI 0X02
     SWI 0X11   
 
-A: .ASCIZ "Hello, my name is John"
-B: .ASCIZ "not"
+A: .ASCIZ "thabcghabc"
+B: .ASCIZ "abc"
 C: .ASCIZ "Substring Present"
 D: .ASCIZ "Substring Absent"
